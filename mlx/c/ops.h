@@ -326,6 +326,7 @@ mlx_array mlx_pad(
     const int* high_pad_size,
     size_t num_high_pad_size,
     mlx_array pad_value,
+    mlx_string mode,
     mlx_stream s);
 mlx_array mlx_partition(mlx_array a, int kth, int axis, mlx_stream s);
 mlx_array mlx_partition_all(mlx_array a, int kth, mlx_stream s);

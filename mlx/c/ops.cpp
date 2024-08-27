@@ -658,6 +658,7 @@ extern "C" mlx_array mlx_pad(
     const int* high_pad_size,
     size_t num_high_pad_size,
     mlx_array pad_value,
+    mlx_string mode,
     mlx_stream s) {
   RETURN_MLX_C_ARRAY(mlx::core::pad(
       a->ctx,
@@ -665,6 +666,7 @@ extern "C" mlx_array mlx_pad(
       MLX_CPP_INTVEC(low_pad_size, num_low_pad_size),
       MLX_CPP_INTVEC(high_pad_size, num_high_pad_size),
       pad_value->ctx,
+      MLX_CPP_STRING(mode),
       s->ctx));
 }
 extern "C" mlx_array
