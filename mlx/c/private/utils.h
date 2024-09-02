@@ -48,6 +48,12 @@ class CFILEReader : public mlx::core::io::Reader {
   virtual void read(char* data, size_t n) override {
     fread(data, 1, n, f);
   };
+
+  void read(char* data, size_t n, size_t offset) override {
+      seek(offset);
+      fread(data, 1, n, f);
+  }
+
   virtual std::string label() const override {
     return "FILE (read mode)";
   };
